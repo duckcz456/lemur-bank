@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="LEMUR BANK – bezpečný simulátor virtuálního bankovnictví.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<title>LEMUR BANK</title>
+<style>
+:root{color-scheme:dark;--bg:#06101f;--panel:#0e2038;--panel2:#142b49;--blue:#4aa3ff;--cyan:#54e0db;--muted:#91a8c5;--white:#f3f7ff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(ellipse at 15% 0%,#173b65 0,transparent 38%),linear-gradient(135deg,#050c18,#0a1a2d 65%,#071322);color:var(--white);min-height:100vh}
+.wrap{max-width:1120px;margin:auto;padding:28px 20px 50px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:2px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#65d9ff,#2678df);display:grid;place-items:center;color:#031326;font-size:25px;box-shadow:0 10px 28px #2087d755}.pill{border:1px solid #315174;background:#10243c;color:#a9c9e9;border-radius:30px;padding:9px 14px;font-size:12px;letter-spacing:.7px}
+h1{font-size:clamp(27px,5vw,44px);margin:34px 0 8px;letter-spacing:-1.5px}.sub{color:var(--muted);margin:0 0 26px}.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}.panel{background:linear-gradient(145deg,#122944eF,#0a1a2deF);border:1px solid #294767;border-radius:24px;padding:24px;box-shadow:0 18px 50px #0005;position:relative;overflow:hidden}.balance{font-size:clamp(36px,6vw,54px);font-weight:850;letter-spacing:-2px;margin:8px 0}.muted{color:var(--muted);font-size:13px}.change{color:var(--cyan);font-size:13px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:750;cursor:pointer;background:linear-gradient(135deg,#4aa3ff,#3277e8);color:#061426;box-shadow:0 8px 20px #267ce744}.btn.secondary{background:#193754;color:#d8eaff;border:1px solid #315879;box-shadow:none}.btn:active{transform:translateY(1px)}.card{min-height:210px;background:linear-gradient(120deg,#173c68,#176b88 58%,#253e83);border:1px solid #65c9f777;border-radius:22px;padding:22px;box-shadow:inset 0 1px #ffffff55,0 18px 35px #0005;position:relative}.card:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-60px;top:-90px;background:#ffffff12}.chip{width:42px;height:30px;border-radius:7px;background:linear-gradient(135deg,#f5d995,#a78a4b);margin:25px 0 18px}.cardnum{letter-spacing:3px;font-size:16px}.cardfoot{display:flex;justify-content:space-between;margin-top:20px;font-size:11px;letter-spacing:1px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.stat{background:#0a1a2d;border:1px solid #203d5b;border-radius:17px;padding:16px}.stat strong{display:block;font-size:21px;margin-top:6px}.section{margin-top:20px}.section h2{font-size:18px;margin:0 0 14px}.transaction{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #203a55}.transaction:last-child{border:0}.plus{color:#55dfb1}.minus{color:#ff9b9b}.notice{font-size:12px;color:#8fa9c4;text-align:center;margin-top:28px;line-height:1.6}.modal{position:fixed;inset:0;background:#0009;display:none;place-items:center;padding:20px}.modal.show{display:grid}.dialog{width:min(390px,100%);background:#10243b;border:1px solid #355777;border-radius:22px;padding:22px;box-shadow:0 25px 80px #0009}.dialog input{width:100%;padding:13px;border-radius:11px;border:1px solid #3a5876;background:#071526;color:white;margin:10px 0 16px;font-size:17px}.dialog h3{margin:0 0 8px}.dialog .actions{margin-top:8px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.wrap{padding:20px 14px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand"><div class="logo">L</div><span>LEMUR BANK</span></div><span class="pill">VIP SILVER · DEMO ÚČET</span></header>
+<h1>Vítej zpět.</h1><p class="sub">Tvoje virtuální finance přehledně na jednom místě.</p>
+<div class="grid">
+<section class="panel">
+<div class="muted">CELKOVÝ VIRTUÁLNÍ ZŮSTATEK</div><div class="balance" id="balance">12 600 Kč</div><div class="change">● Účet je aktivní · Demo režim</div>
+<div class="actions"><button class="btn" id="add">＋ Přidat virtuální peníze</button><button class="btn secondary" id="spend">− Simulovat nákup</button></div>
+<div class="stats"><div class="stat"><span class="muted">Cashback</span><strong>10 %</strong></div><div class="stat"><span class="muted">Denní bonus</span><strong>20 Kč</strong></div><div class="stat"><span class="muted">Členství</span><strong>Silver</strong></div></div>
+</section>
+<section class="panel"><div class="muted" style="margin-bottom:14px">VIRTUÁLNÍ PLATEBNÍ KARTA</div><div class="card"><div style="font-weight:850;letter-spacing:2px">LEMUR BANK</div><div class="chip"></div><div class="cardnum">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2048</div><div class="cardfoot"><span>DEMO UŽIVATEL</span><span>VISA · DEMO</span></div></div><p class="muted" style="margin:14px 2px 0">Tato karta je pouze grafická ukázka a nelze s ní platit.</p></section>
+</div>
+<section class="panel section"><h2>Poslední transakce</h2><div id="transactions">
+<div class="transaction"><div><strong>Uvítací bonus</strong><div class="muted">Připsáno při prvním spuštění</div></div><strong class="plus">+100 Kč</strong></div>
+<div class="transaction"><div><strong>Počáteční demo zůstatek</strong><div class="muted">Testovací částka</div></div><strong class="plus">+12 500 Kč</strong></div>
+</div></section>
+<p class="notice">LEMUR BANK je pouze školní/osobní simulátor. Nejde o skutečnou banku ani finanční službu.<br>Všechny částky jsou virtuální. Neukládej sem skutečné bankovní údaje.</p>
+</main>
+<div class="modal" id="modal"><div class="dialog"><h3 id="dialogTitle">Virtuální operace</h3><p class="muted" id="dialogText">Zadej částku v Kč.</p><input id="amount" type="number" min="1" max="100000" value="100"><div class="actions"><button class="btn" id="confirm">Potvrdit</button><button class="btn secondary" id="cancel">Zrušit</button></div></div></div>
+<script>
+const KEY='lemur-bank-demo-v1';let state=JSON.parse(localStorage.getItem(KEY)||'null')||{balance:12600,transactions:[{name:'Uvítací bonus',detail:'Připsáno při prvním spuštění',amount:100},{name:'Počáteční demo zůstatek',detail:'Testovací částka',amount:12500}]};
+const fmt=n=>Math.round(n).toLocaleString('cs-CZ')+' Kč';
+function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+function render(){document.getElementById('balance').textContent=fmt(state.balance);document.getElementById('transactions').innerHTML=state.transactions.slice(0,12).map(t=>`<div class="transaction"><div><strong>${t.name}</strong><div class="muted">${t.detail}</div></div><strong class="${t.amount>=0?'plus':'minus'}">${t.amount>=0?'+':''}${fmt(t.amount)}</strong></div>`).join('')}
+let mode='add';function openDialog(m){mode=m;document.getElementById('dialogTitle').textContent=m==='add'?'Přidat virtuální peníze':'Simulovat nákup';document.getElementById('dialogText').textContent=m==='add'?'Zadej částku, která se připíše na demo účet.':'Zadej cenu nákupu. Přičte se 10% virtuální cashback.';document.getElementById('amount').value=m==='add'?100:200;document.getElementById('modal').classList.add('show')}
+document.getElementById('add').onclick=()=>openDialog('add');document.getElementById('spend').onclick=()=>openDialog('spend');document.getElementById('cancel').onclick=()=>document.getElementById('modal').classList.remove('show');
+document.getElementById('confirm').onclick=()=>{let n=Number(document.getElementById('amount').value);if(!Number.isFinite(n)||n<=0||n>100000){alert('Zadej částku od 1 do 100 000 Kč.');return}if(mode==='add'){state.balance+=n;state.transactions.unshift({name:'Virtuální vklad',detail:'Testovací operace',amount:n})}else{if(n>state.balance){alert('Na demo účtu není dostatek virtuálních peněz.');return}state.balance-=n;state.transactions.unshift({name:'Simulovaný nákup',detail:'Cashback 10 %',amount:-n});let cb=Math.round(n*.1*100)/100;state.balance+=cb;state.transactions.unshift({name:'Cashback',detail:'Virtuální odměna 10 %',amount:cb})}document.getElementById('modal').classList.remove('show');save()};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});render();
+</script></body></html>

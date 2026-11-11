@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "LEMUR BANK",
+  "short_name": "LEMUR BANK",
+  "description": "Virtuální bankovní simulátor",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06101f",
+  "theme_color": "#071426",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
